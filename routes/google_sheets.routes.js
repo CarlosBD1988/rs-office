@@ -7,6 +7,7 @@ var googleSheetsCreateSheet = require("../controllers/google/google_sheets_creat
 var googleSheetsDeleteSheet = require("../controllers/google/google_sheets_delete_sheet.controllers");
 var googleSheetsGetByDataFindValue = require("../controllers/google/google_sheets_get_by_data_find_value.controllers");
 var googleSheetsGetValueController = require("../controllers/google/google_sheets_get_value.controllers");
+var googleSheetsListSheet = require("../controllers/google/google_sheets_list_sheets.controllers");
 
 /* GET google listing. */
 router.get("/", (req, res, next) => {
@@ -36,6 +37,11 @@ router.post(
 router.post(
     "/google-sheets-get",
     googleSheetsGetValueController.googleSheetsGetValue
+);
+
+router.post(
+    "/google-sheets-list-sheets",
+    googleSheetsListSheet.googleSheetsListSheets
 );
 
 module.exports = router;
