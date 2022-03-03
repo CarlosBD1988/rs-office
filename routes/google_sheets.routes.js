@@ -9,6 +9,7 @@ var googleSheetsGetByDataFindValue = require("../controllers/google/google_sheet
 var googleSheetsGetValueController = require("../controllers/google/google_sheets_get_value.controllers");
 var googleSheetsListSheet = require("../controllers/google/google_sheets_list_sheets.controllers");
 var googleSheetsGetLastRowController = require("../controllers/google/googleSheetsGetLastRow.controllers");
+var googleSheetsUpdateCellsController = require("../controllers/google/googleSheetsUpdateCells.controllers");
 
 /* GET google listing. */
 router.get("/", (req, res, next) => {
@@ -48,6 +49,11 @@ router.post(
 router.post(
     "/google-sheets-get-last-row",
     googleSheetsGetLastRowController.googleSheetsGetLastRow
+);
+
+router.post(
+    "/google-sheets-update-cells",
+    googleSheetsUpdateCellsController.googleSheetsUpdateCell
 );
 
 module.exports = router;
