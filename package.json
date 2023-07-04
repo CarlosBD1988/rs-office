@@ -2,10 +2,18 @@
     "name": "rs-office",
     "version": "0.0.1",
     "private": true,
+    "main": "app.js",
+    "bin": "app.js",
     "scripts": {
         "start": "node ./bin/www",
-        "start:dev": "nodemon ./bin/www"
+        "start:dev": "nodemon ./bin/www",
+        "build": "pkg ./bin/www --out-path ./build -t node16-win-x64"
     },
+    "pkg": {
+        "assets": [  
+          "public/**/*"   
+        ]    
+      },
     "dependencies": {
         "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",
